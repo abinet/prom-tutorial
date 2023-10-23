@@ -4,9 +4,12 @@ services:
     ports:
       - "8080:8080"
   prom:
+    depends_on:
+      - app
     image: "prom/prometheus"
     ports:
       - "9090:9009"
     volumes:
-      - ./prometheus.yaml:/etc/prometheus/prometheus.ym
+      - ./prometheus.yaml:/etc/prometheus/prometheus.yaml
+    
 
