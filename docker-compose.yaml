@@ -1,0 +1,12 @@
+services:
+  app:
+    image: "christianhxc/gorandom:1.0"
+    ports:
+      - "8080:8080"
+  prom:
+    image: "prom/prometheus"
+    ports:
+      - "9090:9009"
+    volumes:
+      - ./prometheus.yaml:/etc/prometheus/prometheus.ym
+
